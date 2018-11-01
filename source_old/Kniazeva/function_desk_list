@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>
+
 int checkParams(int widthPicture, int heightPicture, int offsetwidthPicture, int offsetheightPicture , 
 int realwidthPicture, int realheightPicture)
 {
-/*prinimaet parametri i proveryet ix na istinnost*/
-
-return 1;
+    /*принимает параметы и проверяет их на истинность; высота и длина больше 1,смещение больше 0, проверяет,чтобы смещение было 
+    меньше значения параметра на -2; 
+    к смещению прибавляем высоту и шириру,проверяем не выходдят ли параметры за границы рисунка;
+    возвращает 1, если праметры верны
+    возвращает 0, если параметры неверны*/
+    
 }
 
 
@@ -22,5 +26,49 @@ file *openFile (char *fileName, char *openAction)
     return inputFile;
 }
 
-fseek 
 
+fseek(in, head_in.bfOffBits, SEEK_SET) 
+{
+       /*открывает файл,переходит в начало исходного файла;
+       начинает сдвигаться от начала к файла к пикселям;
+       head_in.bfOffBits - какое смщение от начала файла до пикселей;
+       с помощью двойного цикла считывает в массив; */
+}
+
+
+
+fread(&img[i][j], 1, 3, in);
+fread(&junk, 1, round, in);
+
+{
+    /* считывает посимвольно с помощью цикла пиксели в массив*/
+}
+
+
+fwrite(&img[i][j].b, sizeof(char), 1, out);
+fwrite(&img[i][j].g, sizeof(char), 1, out);
+fwrite(&img[i][j].r, sizeof(char), 1, out);
+{
+    /*посимвольно вставляем в новый файл содержимое массива уже нарисованного прямоугольника*/
+}
+
+fwrite(&junk, 1, round, out);
+
+{
+    /*считывает мусор (округления)*/
+}
+
+
+fclose
+{
+    /*закрывает файл*/
+}
+
+
+free(img[i]);
+free(img)
+{ 
+    /*освобождает место в памяти*/
+}
+
+    
